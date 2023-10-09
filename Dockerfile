@@ -17,9 +17,3 @@ RUN adduser -D devtron
 COPY --from=build-env  /go/src/github.com/devtron-labs/kubewatch .
 
 RUN chown devtron:devtron ./kubewatch
-
-RUN chmod +x ./kubewatch
-
-USER devtron
-
-ENTRYPOINT ["./kubewatch"]
